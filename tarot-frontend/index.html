@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html lang="en"></html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="index.css"/>
-    <h1>Title HERE</h1>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <title>Learn Tarot Cards</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap" rel="stylesheet">
+    </head>
 
-</head>
+    <body>
+        <h1 class="title">Welcome to the Tarot Project!</h1>
+        
+        <div></div>
+            <!-- The form -->
+            <!-- <div class="searchForm">
+                <form>
+                <label for="card-search">Search by Card:</label>
+                <input type="text" placeholder="Search.." >
+                <input id="submit" value="Submit" type="submit"></input>
+                </form>
+            </div> -->
 
-<body>
-    <ul id="card-display">
+            <ul id="card-list">
+                    <!-- list all the cards -->
+            </ul>
+<br>
+            <form id="card-form">
+                <h3>title Card</h3>
+                <label for="card-name">Name:</label>
+                <input type="text" name="name" id="card-name"><br><br>
+                <!-- <label for="card-description">Description:</label>
+                <input type="text" name="description" id="card-description"><br><br> -->
+                <label for="card-suit">Suits:</label>
+                <input type="text" name="suit" id="card-suit"><br><br>
+                <select name="suit" id="suit">
+                    <option name="suit_id" value="1">Wands</option>
+                    <option name="suit_id" value="2">Swords</option>
+                    <option name="suit_id" value="3">Cups</option>
+                    <option name="suit_id" value="3">Pentacles</option>
+                </select>
+                <input type="submit" value="Create">?
+            </form>
+            
+            <br>
 
-    </ul>
 
 
 
 
-    <script src="index.js" type="text/javascript"></script>
 
-</body>
+
+        <script src="src/card.js" type="text/javascript"></script>
+        <script src="src/cardsAdapter.js" type="text/javascript"></script>
+        <script src="src/suitsAdapter.js" type="text/javascript"></script>
+        <script src="src/suit.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+
+    </body>
 
 </html>
+
+
+        <!-- <div class="main-container"> -->
+            <!-- hiii -->
+            <!-- <div class="main-info-container"> -->
+                <!-- Bubbles -->
+                <!-- <div class="main-info">
+                    Select A Card
+                </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
