@@ -4,8 +4,18 @@ class SuitsAdapter {
     }
 
     fetchSuits() {
-
+        fetch(this.suitsUrl)
+            .then(res => res.json())
+            .then(data => data.data.forEach(element => {               
+                let suit = new Suit(element.attributes)
+                debugger
+                suit.attachToDom(element)
+          
+            })) 
+                
     }
+    
+
 
 
 

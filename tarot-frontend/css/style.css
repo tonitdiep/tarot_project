@@ -16,3 +16,7 @@ li.meaning {
     justify-content: center;
     display: grid;
 } */
+
+#card-form {
+    text-align: left;
+}

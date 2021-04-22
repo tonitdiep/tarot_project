@@ -13,8 +13,7 @@ class CardsAdapter {
      
                 card.attachToDom(element)
 
-            })
-            )
+            }))
 
         
     }

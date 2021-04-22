@@ -6,7 +6,7 @@
 //consider cardsAdapter.js for things that makes calls to the api
 class Card {
     static all = []    
-    // ^all array: Update to stores all cards on the frontend end
+    // ^all array: Update to store all cards on the frontend end
     constructor({id, name, meaning_upright, meaning_reverse, suit_id}) {
            //setting the properites of each item
         this.name = name
@@ -14,8 +14,11 @@ class Card {
         this.meaning_reverse = meaning_reverse
         this.id = id
         this.suit_id = suit_id 
-        // this.cardList = document.getElementById('card-list')
-        this.element = document.getElementById('card-form')
+        // this.suitDiv = document.createElement('div')
+        // this.suitDiv.id = `card-${this.id}`
+        
+        // this.cardList = document.getElementById('card-list') //line23 SAME
+        this.element = document.getElementById('card-form')  //line39
 
         Card.all.push(this)
     }
@@ -36,8 +39,8 @@ class Card {
     }
 // what we want to display: 
     cardRender(){ 
-        this.element.innerHTML = `
-        
+        this.element.innerHTML += `
+    
         <h3 style="text-align: left">
         Name: <span class="name">${this.name}</span><br>
         </h3>    
@@ -47,6 +50,9 @@ class Card {
             <li class="meaning"> 
             Meaning Reverse: <span class="meaning_reverse">${this.meaning_reverse}</span>
             </li>
+                       
+            <input type="submit" value="Delete">?
+            <input type="submit" value="Update">?
         `
         return this.element
     }
