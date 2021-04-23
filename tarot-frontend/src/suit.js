@@ -22,7 +22,7 @@ class Suit {
     // }
 
     get cards() {
-        debugger
+        console.log(this)
         return Card.all.filter((card) => card.suit_id == this.id);
     }
     static findById(id){       
@@ -58,30 +58,47 @@ class Suit {
         
 
     showCards = () => {
-    
+    debugger
         const cardList = document.getElementById('card-list')
-        // const suitCards = document.getElementById("suit-div")
-        // this.suitCards 
-        let selectedSuit = document.querySelector("#suit-dropdown")
-        this.cards
-        cardList.innerHTML = ""
+        this.suitDiv.innerHTML = ""
+        // const suitDiv = document.getElementById("suit-div") on the constructor
+
+        this.cards.forEach(card => {
+            card.attachToDom()
+        })
+        debugger
+  
 
         // cardList.innerHTML = `
 
                     
         //             <h3 style="text-align: left">
-        //             Name: <span class="name">${this.name}</span><br>
+        //             Suit Data ID: <span class="name">${this.id}</span><br>
         //             </h3>    
-        //                 <li class="meaning">    
-        //                 Meaning Upright: <span class="meaning_upright">${this.meaning_upright}</span><br>
-        //                 </li>
-        //                 <li class="meaning"> 
-        //                 Meaning Reverse: <span class="meaning_reverse">${this.meaning_reverse}</span>
-        //                 </li>
+        //           Suit Type -Attributes Name: <span class="name">${this.name}</span><br>
+        //                            <li class="meaning_upright">    
+        //                            Cards Meaning Upright: <span id="meaning_upright">${this.attributes}</span><br>
+        //                            </li>
+        //                            <li class="meaning_reverse"> 
+        //                           Cards Meaning Reverse: <span id="meaning_reverse">${this.cards}</span>
+        //                   </li>
         //             `
         //             return this.cardList
-        // this.suitDiv.innerHTML += ``
-        //  return this.suitDiv
+        this.suitDiv.innerHTML += `
+        
+                                
+        <h3 style="text-align: left">
+        Suit Data ID: <span class="name">${this.id}</span><br>
+        </h3>    
+      Suit Type -Attributes Name: <span class="name">${this.name}</span><br>
+                       <li class="meaning">    
+                       Cards Meaning Upright: <span id="meaning_upright">${this.cards}</span><br>
+                       </li>
+                       <li class="meaning"> 
+                      Cards Meaning Reverse: <span id="meaning_reverse">${this.attributes}</span>
+              </li>
+        `
+         return this.suitDiv
      }
 
 
