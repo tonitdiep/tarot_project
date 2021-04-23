@@ -7,9 +7,11 @@ class SuitsAdapter {
         fetch(this.suitsUrl)
             .then(res => res.json())
             .then(data => data.data.forEach(element => {               
+    //  debugger
                 let suit = new Suit(element.attributes)
-                debugger
+// debugger
                 suit.attachToDom(element)
+ 
           
             })) 
                 
