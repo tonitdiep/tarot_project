@@ -3,20 +3,33 @@
     font-family: 'Laila', sans-serif;
 }
 
-li.meaning {
-    text-indent: 5%;
-}
-/* .card {
-    background-color: pink;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    margin: 50px;
-    height: 175px;
-    width: 125px;
-    justify-content: center;
-    display: grid;
-} */
 
-#card-form {
+.card-form {
     text-align: left;
 }
+
+.suit-div {
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    /* display: table; */
+}
+
+ .card-form {
+    content: "";
+    display: table;
+    clear: both;
+    /* float: left;
+    width: 50%; */
+} 
+/* .column {
+    float: left;
+    width: 50%;
+  } */
+
+  /* Clear floats after the columns */
+  /* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */

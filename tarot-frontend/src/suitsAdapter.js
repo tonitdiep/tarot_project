@@ -7,7 +7,7 @@ class SuitsAdapter {
         fetch(this.suitsUrl)
             .then(res => res.json())
             .then(data => data.data.forEach(element => {               
-     debugger
+    //  debugger
                 let suit = new Suit({name: element.attributes.name, id: element.id})
 // debugger
                 suit.attachToDom(element)

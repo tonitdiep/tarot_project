@@ -17,13 +17,12 @@ class Card {
         // this.suitDiv = document.createElement('div')
         // this.suitDiv.id = `card-${this.id}`
         
-        // this.cardList = document.getElementById('card-list') //line23 SAME
         this.element = document.getElementById('card-form')  //line39
 
         Card.all.push(this)
     }
 
-    get cardList(){
+    get cardList(){      
         // debugger
         return document.getElementById('card-list')
 
@@ -32,22 +31,29 @@ class Card {
         // debugger
         return Card.all.find(card => card.id == id)
     }
+
+    static resetAllCards(){
+        Card.all.forEach(e => e.attachToDom())
+        document.getElementById("all-btn").remove()
+    }
     attachToDom(){
         // debugger
+   
         this.cardList.append(this.cardRender())
     
     }
 // what we want to display: 
     cardRender(){ 
+
         this.element.innerHTML += `
     
         <h3 style="text-align: left">
         Name: <span class="name">${this.name}</span><br>
         </h3>    
-            <li class="meaning">    
+            <li class="meaning_upright">    
             Meaning Upright: <span class="meaning_upright">${this.meaning_upright}</span><br>
             </li>
-            <li class="meaning"> 
+            <li class="meaning_reverse"> 
             Meaning Reverse: <span class="meaning_reverse">${this.meaning_reverse}</span>
             </li>
                        
