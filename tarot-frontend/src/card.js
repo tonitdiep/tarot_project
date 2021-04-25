@@ -14,8 +14,8 @@ class Card {
         this.meaning_reverse = meaning_reverse
         this.id = id
         this.suit_id = suit_id 
-        // this.suitDiv = document.createElement('div')
-        // this.suitDiv.id = `card-${this.id}`
+        // this.element = document.createElement('div')
+        // this.element.id = `card-${this.id}`
         
         this.element = document.getElementById('card-form')  //line39
 
@@ -28,7 +28,7 @@ class Card {
 
     }
     static findById(id){
-        // debugger
+
         return Card.all.find(card => card.id == id)
     }
 
@@ -37,8 +37,6 @@ class Card {
         document.getElementById("all-btn").remove()
     }
     attachToDom(){
-        // debugger
-   
         this.cardList.append(this.cardRender())
     
     }
@@ -49,6 +47,7 @@ class Card {
     
         <h3 style="text-align: left">
         Name: <span class="name">${this.name}</span><br>
+
         </h3>    
             <li class="meaning_upright">    
             Meaning Upright: <span class="meaning_upright">${this.meaning_upright}</span><br>

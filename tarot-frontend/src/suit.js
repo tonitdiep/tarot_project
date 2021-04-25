@@ -16,7 +16,7 @@ class Suit {
     
 
     cards() {
-        console.log(this)
+    debugger
         return Card.all.filter((card) => card.suit_id == this.id);
     }
     static findById(id){       
@@ -62,7 +62,8 @@ class Suit {
         cardForm.innerHTML = ""
   
         return this.cards().forEach(card => {
-            card.attachToDom
+            card.attachToDom.value
+           debugger
         })  
     
     
