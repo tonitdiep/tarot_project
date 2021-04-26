@@ -5,12 +5,16 @@ const suitsAdapter = new SuitsAdapter
 const cardList = document.getElementById('card-list')
 const cardForm = document.getElementById('card-form')
 
+
+
 document.addEventListener('DOMContentLoaded', () => {  
     // const accordionSelection = document.getElementsByClassName('accordionSelection')
     // accordionSelection.addEventListener('click', handleSelection)
     cardsAdapter.fetchCards();
     suitsAdapter.fetchSuits();
-    // suitsAdapter.showCards();
+    // cardFormDiv.addEventListener('submit', cardsAdapter.handleClickSubmit)
+    // newFormButton.addEventListener('click', hideBtnLoadForm)
+
 })
 
     // function handleSelection(event) {

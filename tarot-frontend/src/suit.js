@@ -46,16 +46,37 @@ class Suit {
 
         
 
-    showCards = (e) => {
-        console.log(this)
-        const cardForm = document.getElementById('card-form')
+    showCards = () => {
 
+        let showAllBtn = document.getElementById("all-btn")
+        if (!showAllBtn){
+            showAllBtn = document.createElement('button')
+            showAllBtn.id = "all-btn"
+            showAllBtn.innerText = "SHOW ALL CARDS"
+            this.suitCards.append(showAllBtn)
+        }else{
+            showAllBtn = document.getElementById("all-btn")
+        }
+        showAllBtn.addEventListener("click", this.reset)
+
+
+        const cardForm = document.getElementById('card-form')
         cardForm.innerHTML = ""
-     
         return this.cards().forEach(card => {
             card.attachToDom()
-        })      
+        })
+
     }
+    
+    reset = () => {
+            let suitElement = document.getElementById(`suit-${this.id}`)
+            suitElement.children[0].style.color = "pink"
+            Card.resetAllCards()
+    }
+
+
+
+
 
 
     

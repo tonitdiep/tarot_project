@@ -14,8 +14,8 @@ class Card {
         this.meaning_reverse = meaning_reverse
         this.id = id
         this.suit_id = suit_id 
-        // this.el = document.createElement('div')
-        // this.el.id = `card-${this.id}`
+        this.el = document.createElement('div')
+        this.el.id = `card-${this.id}`
         
         this.element = document.getElementById('card-form')  //line39
 
@@ -36,8 +36,12 @@ class Card {
         Card.all.forEach(e => e.attachToDom())
         document.getElementById("all-btn").remove()
     }
+    addEventListeners(){
+        this.element.addEventListener("click", this.handleCardClick)
+    }
     attachToDom(){
         this.cardList.append(this.cardRender())
+        this.addEventListeners()
     
     }
 // what we want to display: 
@@ -50,17 +54,57 @@ class Card {
 
         </h3>    
             <li class="meaning_upright">    
-            Meaning Upright: <span class="meaning_upright">${this.meaning_upright}</span><br>
+            Meaning Upright: <span class="meaning-upright">${this.meaning_upright}</span><br>
             </li>
             <li class="meaning_reverse"> 
-            Meaning Reverse: <span class="meaning_reverse">${this.meaning_reverse}</span>
+            Meaning Reverse: <span class="meaning-reverse">${this.meaning_reverse}</span>
             </li>
                        
-            <input type="submit" value="Delete">?
-            <input type="submit" value="Update">?
+            <button class="delete" data-id="${this.id}">Delete</button>
+            <button class="update" data-id="${this.id}">Update</button>
         `
         return this.element
     }
+
+    updateCardOnDom({name, meaning_upright, meaning_reverse}){
+        debugger
+        this.name = name
+        this.meaning_upright = meaning_upright
+        this.meaning_reverse = meaning_reverse
+        this.cardRender()
+        this.addEventListeners()
+
+    }
+    addUpdateCardInfo(cardId){
+        console.log(this)
+        let card = document.querySelector(`#card-${cardId} li`)
+        let updateCardForm = `
+        <input type="text" name="name" value="${this.name}" id="update-name-${cardId}">
+        <input type="text" name="meaning-upright" value="${this.meaning_upright}" id="update-meaning-upright-${cardId}">
+        <input type="text" name="meaning-reverse" value="${this.meaning_reverse}" id="update-meaning-reverse-${cardId}">
+        `
+        let cardFormDiv = document.createElement('div')
+        cardFormDiv.id = `update-form-${cardId}`
+        cardFormDiv.innerHTML = updateCardForm
+        card.append(cardFormDiv)
+    }
     
     
+    handleCardClick(c){
+        let id = c.target.dataset.id
+        if (c.target.className === "delete"){
+                cardsAdapter.deleteCard(id)
+        } else if(c.target.className === 'update'){
+                c.target.className = "save"
+                c.target.innerText = "Save"
+                debugger
+                this.addUpdateCardInfo(id)
+                debugger
+        } else if(c.target.className === 'save'){
+                c.target.className = "update"
+                c.target.innerText = "Update"
+                cardsAdapter.sendPatchRequest(cardId)
+            }
+    }
+
 }
