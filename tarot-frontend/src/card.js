@@ -3,37 +3,38 @@ class Card {
   
     constructor({id, name, meaning_upright, meaning_reverse, suit_id}) {
           
-        this.name = name
-        this.meaning_upright = meaning_upright
-        this.meaning_reverse = meaning_reverse
-        this.id = id
-        this.suit_id = suit_id 
-        this.el = document.createElement('div')
-        this.el.id = `card-${this.id}`
+        this.name = name;
+        this.meaning_upright = meaning_upright;
+        this.meaning_reverse = meaning_reverse;
+        this.id = id;
+        this.suit_id = suit_id; 
+        this.el = document.createElement('div');
+        this.el.id = `card-${this.id}`;
         
-        this.element = document.getElementById('card-form') 
+        this.element = document.getElementById('card-form') ;
 
-        Card.all.push(this)
+        Card.all.push(this);
     }
 
     get cardList(){      
-        return document.getElementById('card-list')
+        return document.getElementById('card-list');
     }
 
     static findById(id){
-        return Card.all.find(card => card.id == id)
+        return Card.all.find((card) => card.id == id);
     }
 
     static resetAllCards(){
-        Card.all.forEach(e => e.attachToDom())
-        document.getElementById("all-btn").remove()
+        Card.all.forEach((e) => e.attachToDom());
+        document.getElementById("btn").remove();
     }
     addEventListeners(){
         this.element.addEventListener("click", this.handleCardClick)
+
     }
     attachToDom(){
-        this.cardList.append(this.cardRender())
-        this.addEventListeners()    
+        this.cardList.append(this.cardRender());
+        this.addEventListeners();    
     }
 
     cardRender = () => { 
@@ -57,11 +58,11 @@ class Card {
     }
     
     handleCardClick (c) {
-        let id = c.target.dataset.id
+        this.constructor.all 
+        let id = c.target.dataset.id;
         if (c.target.className === "delete"){
                 cardsAdapter.deleteCard(id)
-
-            }
+            };
     }
 
 }

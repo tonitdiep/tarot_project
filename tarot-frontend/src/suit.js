@@ -3,13 +3,13 @@ class Suit {
     static all = []
     constructor({id, name}) {
        
-            this.id = id
-            this.name = name
-            this.suitCards = document.getElementById('suit-div')
-            this.suitDiv = document.createElement('div')
-            this.suitDiv.id = `suit-${id}`
+            this.id = id;
+            this.name = name;
+            this.suitCards = document.getElementById('suit-div');
+            this.suitDiv = document.createElement('div');
+            this.suitDiv.id = `suit-${id}`;
 
-        Suit.all.push(this)
+        Suit.all.push(this);
     }
     
 
@@ -18,19 +18,19 @@ class Suit {
     }
 
     static findById(id){       
-        return Suit.all.find((suit) => suit.id == id)
+        return Suit.all.find((suit) => suit.id == id);
     }
 
 
     attachToDom(){
 
-        this.suitCards.append(this.suitRender())
-        this.addEventListeners()
+        this.suitCards.append(this.suitRender());
+        this.addEventListeners();
     }
 
 
     addEventListeners(){
-        this.suitDiv.addEventListener('click', this.showCards)
+        this.suitDiv.addEventListener('click', this.showCards);
     }
 
 
@@ -45,28 +45,28 @@ class Suit {
         
     showCards = () => {
 
-        let showAllBtn = document.getElementById("btn")
+        let showAllBtn = document.getElementById("btn");
         if (!showAllBtn){
-            showAllBtn = document.createElement('button')
-            showAllBtn.id = "btn"
-            showAllBtn.innerText = "SHOW ALL CARDS"
-            this.suitCards.append(showAllBtn)
+            showAllBtn = document.createElement('button');
+            showAllBtn.id = "btn";
+            showAllBtn.innerText = "SHOW ALL CARDS";
+            this.suitCards.append(showAllBtn);
         }else{
-            showAllBtn = document.getElementById("btn")
+            showAllBtn = document.getElementById("btn");
         }
-        showAllBtn.addEventListener("click", this.reset)
+        showAllBtn.addEventListener("click", this.reset);
 
 
-        const cardForm = document.getElementById('card-form')
+        const cardForm = document.getElementById('card-form');
         cardForm.innerHTML = ""
         return this.cards().forEach(card => {
-            card.attachToDom()
+            card.attachToDom();
         })
 
     }
     
     reset = () => {
-            let suitElement = document.getElementById(`suit-${this.id}`)
+            let suitElement = document.getElementById(`suit-${this.id}`);
             suitElement.children[0].style.color = "pink"
             Card.resetAllCards()
     }

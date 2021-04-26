@@ -16,7 +16,7 @@ class CardsAdapter {
 
 
     deleteCard(id){
-
+  
         let configObj = {
             method: 'DELETE',
             headers: {
@@ -29,13 +29,13 @@ class CardsAdapter {
         .then(res => res.json())
         .then(json => {
             alert(json.message)
-        })
+        });
    
-        Card.all = Card.all.filter(c => c.id != id)
+        Card.all = Card.all.filter(c => c.id != id);
 
      
-        let card = document.getElementById(`card-${id}`)
-        card.remove()
+        let card = document.getElementById(`card-${id}`);
+        card.remove();
     }
 
 
