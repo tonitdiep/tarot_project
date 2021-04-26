@@ -10,12 +10,6 @@ class CardsController < ApplicationController
         render json: CardSerializer.new(card) 
     end
 
-    def update
-        card = Card.find(params[:id])
-        card.update(card_params)
-        render json: CardSerializer.new(card)
-    end
-
     def destroy
         card = Card.find(params[:id])
         card.destroy

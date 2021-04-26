@@ -9,7 +9,9 @@
     background-color: yellow;
     color: black;
 }
-
+.delete {
+    background-color: lightpink;
+}
 #card-list {
     color: brown;
     width: 50%;
