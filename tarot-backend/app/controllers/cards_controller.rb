@@ -10,5 +10,22 @@ class CardsController < ApplicationController
         render json: CardSerializer.new(card) 
     end
 
+    def update
+        card = Card.find(params[:id])
+        card.update(card_params)
+        render json: CardSerializer.new(card)
+    end
+
+    def destroy
+        card = Card.find(params[:id])
+        card.destroy
+        render json: {message: "COMPLETELY deleted #{card.name}!"}
+    end
+
+    private
+
+    def card_params
+        params.require(:card).permit(:name, :meaning_upright, :meaning_reverse, :suit_id)
+    end
 
 end
