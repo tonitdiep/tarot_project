@@ -9,8 +9,6 @@ class Suit {
             this.suitDiv = document.createElement('div')
             this.suitDiv.id = `suit-${id}`
             // this.sorted = false
-
-
         Suit.all.push(this)
     }
     
@@ -20,7 +18,7 @@ class Suit {
         return Card.all.filter((card) => card.suit_id == this.id);
     }
     static findById(id){       
-        return Suit.all.find(suit => suit.id == id)
+        return Suit.all.find((suit) => suit.id == id)
     }
 
     // sortedCards(){
@@ -36,7 +34,6 @@ class Suit {
 
 
     addEventListeners(){
-
         this.suitDiv.addEventListener('click', this.showCards)
         // listening click event, no () not to execute 
         // automatically, only on a click event aka a callback
@@ -45,7 +42,7 @@ class Suit {
 
     suitRender() {
 
-        this.suitDiv.innerHTML += `
+        this.suitDiv.innerHTML = `
         <h3>Suit: ${this.name.charAt(0).toUpperCase() + this.name.slice(1)}</h3>
         `
         return this.suitDiv
@@ -53,18 +50,18 @@ class Suit {
 
         
 
-    showCards = () => {
-        // console.log(this)
+    showCards = (e) => {
+        console.log(this)
         
         const cardForm = document.getElementById('card-form')
-       
-  
+
         cardForm.innerHTML = ""
   
         return this.cards().forEach(card => {
-            card.attachToDom.value
-           debugger
+           return card.attachToDom
+           
         })  
+
     
     
     
