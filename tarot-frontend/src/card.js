@@ -14,8 +14,8 @@ class Card {
         this.meaning_reverse = meaning_reverse
         this.id = id
         this.suit_id = suit_id 
-        // this.element = document.createElement('div')
-        // this.element.id = `card-${this.id}`
+        // this.el = document.createElement('div')
+        // this.el.id = `card-${this.id}`
         
         this.element = document.getElementById('card-form')  //line39
 

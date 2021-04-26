@@ -14,17 +14,13 @@ class Suit {
     
 
     cards() {
-    debugger
         return Card.all.filter((card) => card.suit_id == this.id);
     }
+
     static findById(id){       
         return Suit.all.find((suit) => suit.id == id)
     }
 
-    // sortedCards(){
-    //     debugger
-    //     return this.cards.sort((a,b,c) => a.name - b.meaning_upright - c.meaning_reverse)
-    // }
 
     attachToDom(){
 
@@ -52,19 +48,13 @@ class Suit {
 
     showCards = (e) => {
         console.log(this)
-        
         const cardForm = document.getElementById('card-form')
 
         cardForm.innerHTML = ""
-  
+     
         return this.cards().forEach(card => {
-           return card.attachToDom
-           
-        })  
-
-    
-    
-    
+            card.attachToDom()
+        })      
     }
 
 
