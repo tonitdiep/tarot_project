@@ -2,13 +2,13 @@
 class Suit {
     static all = []
     constructor({id, name}) {
-           //setting the properites of each item
+       
             this.id = id
             this.name = name
             this.suitCards = document.getElementById('suit-div')
             this.suitDiv = document.createElement('div')
             this.suitDiv.id = `suit-${id}`
-            // this.sorted = false
+
         Suit.all.push(this)
     }
     
@@ -31,8 +31,6 @@ class Suit {
 
     addEventListeners(){
         this.suitDiv.addEventListener('click', this.showCards)
-        // listening click event, no () not to execute 
-        // automatically, only on a click event aka a callback
     }
 
 
@@ -45,17 +43,16 @@ class Suit {
     }
 
         
-
     showCards = () => {
 
-        let showAllBtn = document.getElementById("all-btn")
+        let showAllBtn = document.getElementById("btn")
         if (!showAllBtn){
             showAllBtn = document.createElement('button')
-            showAllBtn.id = "all-btn"
+            showAllBtn.id = "btn"
             showAllBtn.innerText = "SHOW ALL CARDS"
             this.suitCards.append(showAllBtn)
         }else{
-            showAllBtn = document.getElementById("all-btn")
+            showAllBtn = document.getElementById("btn")
         }
         showAllBtn.addEventListener("click", this.reset)
 

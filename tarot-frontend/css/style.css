@@ -2,34 +2,26 @@
     text-align: center;
     font-family: 'Laila', sans-serif;
 }
-
-
-/* .card-form {
-    text-align: left;
-} */
-
-.suit-div {
-    cursor: pointer;
-    float: left;
-    width: 50%;
-    /* display: table; */
+* {
+    background-color: lightcyan;
+}
+#btn {
+    background-color: yellow;
+    color: black;
 }
 
- .card-form {
-    content: "";
-    display: table;
-    clear: both;
-    /* float: left;
-    width: 50%; */
-} 
-/* .column {
-    float: left;
+#card-list {
+    color: brown;
     width: 50%;
-  } */
+}
 
-  /* Clear floats after the columns */
-  /* .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  } */
+#suit-div {
+    cursor: pointer;
+    width: 50%;
+
+}
+
+ #card-form {
+    /* float: center; */
+    width: 5555%;
+} 
