@@ -14,6 +14,7 @@ class Suit {
     
 
     get cards() {
+        console.log(this)
         return Card.all.filter((card) => card.suit_id == this.id);
     }
 

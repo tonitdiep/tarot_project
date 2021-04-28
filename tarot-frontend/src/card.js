@@ -49,7 +49,7 @@ class Card {
 
     cardRender = () => { 
         console.log(this)
-        this.el.innerHTML += `
+        this.el.innerHTML = `
     
         <h3 style="text-align: left">
         Name: <span class="name">${this.name}</span><br>

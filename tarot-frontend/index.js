@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // function  refereence CARD
  searchClick = (e) => {
     console.log(this)
-    Card.all.map((card) => card.suit_id == this.id);
+    // Card.all.map((card) => card.suit_id == this.id);
  
 
-    document.getElementById('card-form').innerText=`${this.name}`
+    document.getElementById('card-form').innerHTML=`${this.name}`
     // return this.searchBtn;
 
 }
