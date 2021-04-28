@@ -13,12 +13,14 @@ class Suit {
     }
     
 
-    cards() {
+    get cards() {
         return Card.all.filter((card) => card.suit_id == this.id);
     }
 
     static findById(id){       
+
         return Suit.all.find((suit) => suit.id == id);
+
     }
 
 
@@ -44,7 +46,7 @@ class Suit {
 
         
     showCards = () => {
-
+debugger
         let showAllBtn = document.getElementById("btn");
         if (!showAllBtn){
             showAllBtn = document.createElement('button');
@@ -57,15 +59,16 @@ class Suit {
         showAllBtn.addEventListener("click", this.reset);
 
 
-        const cardForm = document.getElementById('card-form');
-        cardForm.innerHTML = ""
-        return this.cards().forEach(card => {
+        const cardList = document.getElementById('card-list');
+        cardList.innerHTML = ""
+        return this.cards.forEach(card => {
             card.attachToDom();
         })
 
     }
     
     reset = () => {
+
             let suitElement = document.getElementById(`suit-${this.id}`);
             suitElement.children[0].style.color = "pink"
             Card.resetAllCards()

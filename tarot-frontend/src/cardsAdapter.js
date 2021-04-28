@@ -10,8 +10,11 @@ class CardsAdapter {
                 (element => {
             
                 let card = new Card(element.attributes)
+
                 card.attachToDom(element)
+       
             }))
+
     }
 
 
@@ -35,9 +38,11 @@ class CardsAdapter {
 
      
         let card = document.getElementById(`card-${id}`);
+        console.log(card)
         card.remove();
     }
 
+    //need element 
 
   
 
