@@ -19,7 +19,7 @@ class CardsAdapter {
 
 
     deleteCard(id){
-  
+        // id.preventDefault()
         let configObj = {
             method: 'DELETE',
             headers: {
@@ -27,16 +27,16 @@ class CardsAdapter {
                 Accept: "application/json"
             }
         }
-    
+        // id.preventDefault()
         fetch(this.cardsUrl + `/${id}`, configObj)
         .then(res => res.json())
         .then(json => {
             alert(json.message)
         });
-   
+        // id.preventDefault()
         Card.all = Card.all.filter(c => c.id != id);
 
-     
+
         let card = document.getElementById(`card-${id}`);
         console.log(card)
         card.remove();
