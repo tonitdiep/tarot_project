@@ -19,7 +19,9 @@ class CardsAdapter {
 
 
     deleteCard(id){
-        // id.preventDefault()
+        // button//id.preventDefault() //only on form submit event
+        //default behavior shoots  post a request. 
+        //if not send url 
         let configObj = {
             method: 'DELETE',
             headers: {

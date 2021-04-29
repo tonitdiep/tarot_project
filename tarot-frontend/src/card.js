@@ -2,7 +2,7 @@ class Card {
     static all = []    
   
     constructor({id, name, meaning_upright, meaning_reverse, suit_id}) {
-        // console.log(name)
+        console.log(this)
         this.name = name;
         this.meaning_upright = meaning_upright;
         this.meaning_reverse = meaning_reverse;

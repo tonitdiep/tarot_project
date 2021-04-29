@@ -4,34 +4,33 @@ const cardList = document.getElementById('card-list')
 const cardForm = document.getElementById('card-form')
 
 const searchContainer = document.getElementById('search-container')
-const searchInput= document.getElementById("searchInput")
+// const searchInput= document.getElementById("searchInput")
 
 document.addEventListener('DOMContentLoaded', () => {  
     cardsAdapter.fetchCards();
     suitsAdapter.fetchSuits();
 // add enter event listener / call function 17
-    searchInput.addEventListener('click', this.searchClick)
+   const searchInput = document.getElementById("searchSubmit") 
+   searchInput.addEventListener('click', this.searchClick)
+    debugger
+
+ 
 })
 
 
 
 // call event listener & function  reference CARD
  searchClick = (e) => {
-//need Card.all and .attachToDom();
-    console.log(this)
-    Card.all.append(this.searchClick)
-    Card = []
-    Card.all
-    Card.attachToDom() 
-    // Card.all.find((card) => card.id == id);
+//need Card.all and .attachToDom()
+    let search = document.getElementById('searchInput').value
+    const filteredCards = Card.all.filter(c => c.name === search)
+    debugger
+    
+//    c.name === searchInput.value
+    filteredCards.innerHTML = ""
+    return filteredCards.forEach(card => {
+        card.attachToDom();
+    })
 
-    // const cardList = document.getElementById('card-list')
-    // const searchContainer = document.getElementById('search-container')
-    // const searchInput= document.getElementById("searchInput")
-
-    // Card.all.filter  
-    // this.cardList
-        //return this.searchCards
-        // return this.searchBtn;
 
 }
