@@ -10,8 +10,6 @@ class Card {
         this.suit_id = suit_id; 
         this.el = document.createElement('div');
         this.el.id = `card-${this.id}`;
-        
-        // this.element = document.getElementById('card-form') ;
 
         Card.all.push(this);
     }
@@ -27,12 +25,6 @@ class Card {
         
     }
 
-    // static search () {
-    //     console.log(this)
-    //     return document.getElementById('search-cards')
-    //     addEventListener('click', this.search)
-    // }
-
     static resetAllCards(){
         Card.all.forEach((e) => e.attachToDom());
         document.getElementById("btn").remove();
@@ -40,8 +32,10 @@ class Card {
     addEventListeners(){
 
         this.el.addEventListener("click", this.handleCardClick)
- 
     }
+
+
+
     attachToDom(){
         this.cardList.append(this.cardRender());
         this.addEventListeners();    

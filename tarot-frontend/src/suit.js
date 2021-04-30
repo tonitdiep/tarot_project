@@ -34,7 +34,9 @@ class Suit {
 
     addEventListeners(){
         this.suitDiv.addEventListener('click', this.showCards);
+    
     }
+
 
 
     suitRender() {
@@ -47,7 +49,7 @@ class Suit {
 
         
     showCards = () => {
-debugger
+
         let showAllBtn = document.getElementById("btn");
         if (!showAllBtn){
             showAllBtn = document.createElement('button');

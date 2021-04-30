@@ -19,9 +19,6 @@ class CardsAdapter {
 
 
     deleteCard(id){
-        // button//id.preventDefault() //only on form submit event
-        //default behavior shoots  post a request. 
-        //if not send url 
         let configObj = {
             method: 'DELETE',
             headers: {
@@ -29,13 +26,13 @@ class CardsAdapter {
                 Accept: "application/json"
             }
         }
-        // id.preventDefault()
+ 
         fetch(this.cardsUrl + `/${id}`, configObj)
         .then(res => res.json())
         .then(json => {
             alert(json.message)
         });
-        // id.preventDefault()
+
         Card.all = Card.all.filter(c => c.id != id);
 
 
@@ -44,7 +41,6 @@ class CardsAdapter {
         card.remove();
     }
 
-    //need element 
 
   
 
