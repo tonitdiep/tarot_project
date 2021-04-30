@@ -26,15 +26,13 @@ class Suit {
 
 
     attachToDom(){
-
         this.suitCards.append(this.suitRender());
         this.addEventListeners();
     }
 
 
     addEventListeners(){
-        this.suitDiv.addEventListener('click', this.showCards);
-    
+        this.suitDiv.addEventListener('click', this.showCards); 
     }
 
 
