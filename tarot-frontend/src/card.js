@@ -29,21 +29,37 @@ class Card {
         document.getElementById("btn").remove();
     }
     addEventListeners(){
-
         this.el.addEventListener("click", this.handleCardClick)
+
+        const filterInput = document.getElementById("filterSubmit")
+        filterInput.addEventListener("click", this.filteredKings)       
+
+     
     }
 
+    filteredKings = (e) => {
+  
+        const filteredKings = Card.all.filter(name => name.name.includes('King of'))
+ 
+        cardList.innerHTML = ""
+        return filteredKings.forEach(card => {
+            card.attachToDom();
+
+        return cardList
+    })
+
+    }
 
 
     attachToDom(){
         this.cardList.append(this.cardRender());
         this.addEventListeners();    
+
     }
 
     cardRender = () => { 
-        console.log(this)
         this.el.innerHTML = `
-    
+
         <h3 style="text-align: left">
         Name: <span class="name">${this.name}</span><br>
 
@@ -58,12 +74,12 @@ class Card {
             <button class="delete" data-id="${this.id}">Delete</button>
         `
         return this.el
+        
     }
     
     handleCardClick (c) {
-        console.log(this)
-
         let id = c.target.dataset.id;
+
         if (c.target.className === "delete"){
                 cardsAdapter.deleteCard(id)
             };
