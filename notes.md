@@ -4,7 +4,7 @@
 Rails
 [X] Follow Rails MVC and RESTful conventions. That means, for example, that a request GET /puppies ought to be handled by the PuppiesController, fetch puppies from the database using a Puppy Active Record model, and return a list of puppies as JSON.
 [X] Well-named variables and methods
-[ ] Short, single-purpose methods
+
 Git
 [X] Aim for a large number of small commits - commit frequently!
 [X] Add meaningful messages to your commits. When you look back at your commits with git log, the messages should describe each change.
