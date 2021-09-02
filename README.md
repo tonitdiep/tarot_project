@@ -1,7 +1,7 @@
 # JavaScript Module
 Tarot Project: Focuses only on 56 Minor Arcana Cards out of 78 cards from the Tarot Deck. This frontend application consists of Javascript, HTML and CSS with a Rails RESTful routes API from the backend along with using event listeners, 'let', 'const' to methods like '.filter' and 'forEach'.
 
-🎥 [Demo](https://www.youtube.com/watch?v=_UcfCz5SpkU)<br>
+🎥  [Demo](https://www.youtube.com/watch?v=_UcfCz5SpkU)<br>
 
 ## Installation 
 To Start, run these keys from the terminal:
